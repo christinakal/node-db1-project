@@ -1,11 +1,10 @@
 const express = require('express');
-const AccountsRouter = require('./accounts/accounts-router'); 
+const accountsRouter = require('./accounts/accounts-router'); 
 const db = require('./data/dbConfig.js');
-
 const server = express();
 
 server.use(express.json());
-server.use('/api/accounts', AccountsRouter);
+server.use('/api/accounts', accountsRouter);
 
 server.get('/', (req,res) => {
     res.send('<h1>Welscome to my Server!</h1>');
